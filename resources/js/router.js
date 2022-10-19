@@ -1,8 +1,10 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import ContactPage from './pages/ContactPage.vue'
+
 
 Vue.use(VueRouter);
+
+import ContactPage from './pages/ContactPage.vue';
 
 const router = new VueRouter ({
     mode: "history",
@@ -10,7 +12,7 @@ const router = new VueRouter ({
         {
             path:'/contact',
             name: 'contact',
-            component: ''
+            component: ContactPage
         }
     ]
 });
