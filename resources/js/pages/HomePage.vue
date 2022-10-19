@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h1>Contattaci</h1>
-    <h3>compila qui il form</h3>
+    <h1>Benvenuto in Homepage</h1>
+    
   </div>
 </template>
 
 <script>
 export default {
-    name:"ContactPage",
+    name:"HomePage",
 }
 </script>
 

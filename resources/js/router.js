@@ -6,10 +6,16 @@ Vue.use(VueRouter);
 
 import ContactPage from './pages/ContactPage.vue';
 import AboutUspage from './pages/AboutUspage.vue';
+import HomePage from './pages/HomePage.vue';
 
 const router = new VueRouter ({
     mode: "history",
     routes: [
+        {
+            path:'/',
+            name: 'home',
+            component: HomePage
+        },
         {
             path:'/contact',
             name: 'contact',
