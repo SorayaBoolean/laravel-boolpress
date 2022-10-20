@@ -22,6 +22,23 @@ class PostController extends Controller
         ]);
     }
 
+    public function show ($slug)
+    {
+       $post = Post::where ('slug', $slug)->firts();
+       
+       if ($post) {
+        return response ()->json ([
+            'success' => 'true',
+            'result' => $post
+        ]);
+       } else {
+        return response () -> json([
+            'success' => false,
+            'message' => 'Il post richiesto non esiste'
+        ]);
+       }
+    }
+
 }
 
 
