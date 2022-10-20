@@ -10,7 +10,11 @@ name: 'SinglePost',
 methods:{
     getPost () {
         const slug = this.$route.params.slug;
-        console.log(slug)
+        
+        axios.get('/api/posts'+ slug)
+        .then((response) => {
+            console.log(response)
+        });
     }
 },
 mounted () {
