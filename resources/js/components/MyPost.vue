@@ -1,5 +1,5 @@
 <template>
-  <div class="card col-12 mb-5" v-for="(post, index) in posts" :key="index">
+  <div class="card col-12 mb-5">
         <div class="card-body">
             <h5 class="card-title">{{post.title}}</h5>
             <p class="card-text">{{truncateText(post.content, 10)}}</p>
@@ -11,7 +11,17 @@
 
 <script>
 export default {
-name: 'MyPost'
+name: 'MyPost',
+props: ['post'],
+methods: {
+  truncateText (text, maxLength) {
+                if (text.length < maxLength) {
+                    return text;
+                }else {
+                    return text.substring(0, maxLength)+ '...';
+                }  
+         },
+}
 }
 </script>
 

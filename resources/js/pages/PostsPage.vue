@@ -8,21 +8,18 @@
 
         <div v-else class="row">
             <h2 class="mb-5">Posts List:</h2>
-            <MyPost v-for="(post, index) in posts" :key="index"/>
+            <MyPost v-for="(post, index) in posts" :key="index" :post="post"/>
                 
         </div>
 
         <nav >
             <ul class="pagination">
-                <li class="page-item" :class="(currentPage == 1?'disabled':'')"><a class="page-link" href="#" @click="getPosts(currentPage -1)">Previous</a></li>
+                <li class="page-item" :class="(currentPage ==1?'disabled':'')"><a class="page-link" href="#" @click="getPosts(currentPage -1)">Previous</a></li>
                 
-                <li class="page-item" :class="(currentPage == lastPage?'disabled':'')"><a class="page-link" href="#" @click="getPosts(currentPage +1)">Next</a></li>
+                <li class="page-item" :class="(currentPage ==lastPage?'disabled':'')"><a class="page-link" href="#" @click="getPosts(currentPage +1)">Next</a></li>
             </ul>
         </nav>
-    
-
-
-            
+     
         </div>
 
       
@@ -31,7 +28,7 @@
  
  <script>
     
-    import MyPost from ('../components/MyPost.vue')
+    import MyPost from '../components/MyPost.vue'
  
      export default {
          name: 'PostsPage',
@@ -62,13 +59,6 @@
                 this.last_page= response.data.results.last_page;
             });
             },
-            truncateText (text, maxLength) {
-                if (text.length < maxLength) {
-                    return text;
-                }else {
-                    return text.substring(0, maxLength)+ '...';
-                }  
-         },
          },
          mounted(){
             this.getPosts();

@@ -8,7 +8,8 @@ import ContactPage from './pages/ContactPage.vue';
 import AboutUspage from './pages/AboutUspage.vue';
 import HomePage from './pages/HomePage.vue';
 import NotFound from './pages/NotFound.vue';
-import PostsPage from './pages/PostsPage.vue'
+import PostsPage from './pages/PostsPage.vue';
+import SinglePost from './pages/SinglePost.vue'
 
 const router = new VueRouter ({
     mode: "history",
