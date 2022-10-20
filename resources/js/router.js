@@ -25,6 +25,11 @@ const router = new VueRouter ({
             component: ContactPage
         },
         {
+            path:'/blog/:slug',
+            name: 'single-post',
+            component: SinglePost
+        },
+        {
             path:'/blog',
             name: 'blog',
             component: PostsPage

@@ -2238,12 +2238,14 @@ var render = function render() {
     staticClass: "card-text"
   }, [_vm._v(_vm._s(_vm.truncateText(_vm.post.content, 10)))]), _vm._v(" "), _c("p", {
     staticClass: "card-text"
-  }, [_vm._v(_vm._s(_vm.post.category ? _vm.post.category.name : "-"))]), _vm._v(" "), _c("a", {
+  }, [_vm._v(_vm._s(_vm.post.category ? _vm.post.category.name : "-"))]), _vm._v(" "), _c("router-link", {
     staticClass: "btn btn-primary",
     attrs: {
-      href: "#"
+      to: {
+        name: _vm.SinglePost
+      }
     }
-  }, [_vm._v("Read post...")])])]);
+  }, [_vm._v("Read post...")])], 1)]);
 };
 
 var staticRenderFns = [];
@@ -2471,7 +2473,7 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("h1", [_vm._v("Pagina del single post\n  \n")]);
+  return _c("h1", [_vm._v("\n  Pagina del single post\n")]);
 };
 
 var staticRenderFns = [];
@@ -18772,6 +18774,10 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     path: '/contact',
     name: 'contact',
     component: _pages_ContactPage_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  }, {
+    path: '/blog/:slug',
+    name: 'single-post',
+    component: _pages_SinglePost_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
   }, {
     path: '/blog',
     name: 'blog',
