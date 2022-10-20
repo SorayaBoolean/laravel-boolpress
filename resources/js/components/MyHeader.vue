@@ -9,7 +9,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li v-for="(item, index) in menuItems" :key="index" class="nav-item">
-                    <a class="nav-link active" aria-current="page" :href="item.link">{{item.label}}</a>
+                    <router-link class="nav-link active" aria-current="page" :to="{name:item.routeName}">{{item.label}}</router-link>
                     </li>  
                 </ul> 
             </div>
@@ -27,19 +27,19 @@
                 menuItems: [
                     {
                         label:'Home',
-                        link:'#'
+                        routeName:'home'
                     },
                     {
                         label:'Blog',
-                        link:'#'
+                        routeName:'#'
                     },
                     {
                         label:'About Us',
-                        link:'#'
+                        routeName:'about-us'
                     },
                     {
                         label:'Contacts',
-                        link:'#'
+                        routeName:'contact'
                     }
                 ]
                 

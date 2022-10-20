@@ -1914,16 +1914,16 @@ __webpack_require__.r(__webpack_exports__);
     return {
       menuItems: [{
         label: 'Home',
-        link: '#'
+        routeName: 'home'
       }, {
         label: 'Blog',
-        link: '#'
+        routeName: '#'
       }, {
         label: 'About Us',
-        link: '#'
+        routeName: 'about-us'
       }, {
         label: 'Contacts',
-        link: '#'
+        routeName: 'contact'
       }]
     };
   }
@@ -2049,13 +2049,15 @@ var render = function render() {
     return _c("li", {
       key: index,
       staticClass: "nav-item"
-    }, [_c("a", {
+    }, [_c("router-link", {
       staticClass: "nav-link active",
       attrs: {
         "aria-current": "page",
-        href: item.link
+        to: {
+          name: item.routeName
+        }
       }
-    }, [_vm._v(_vm._s(item.label))])]);
+    }, [_vm._v(_vm._s(item.label))])], 1);
   }), 0)])])])]);
 };
 
