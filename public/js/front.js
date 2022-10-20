@@ -2089,7 +2089,16 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'SinglePost'
+  name: 'SinglePost',
+  methods: {
+    getPost: function getPost() {
+      var slug = this.$route.params.slug;
+      console.log(slug);
+    }
+  },
+  mounted: function mounted() {
+    this.getPost();
+  }
 });
 
 /***/ }),
@@ -2242,7 +2251,10 @@ var render = function render() {
     staticClass: "btn btn-primary",
     attrs: {
       to: {
-        name: _vm.SinglePost
+        name: "single-post",
+        params: {
+          slug: _vm.post.slug
+        }
       }
     }
   }, [_vm._v("Read post...")])], 1)]);

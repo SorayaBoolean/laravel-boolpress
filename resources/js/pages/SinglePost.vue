@@ -6,7 +6,16 @@
 
 <script>
 export default {
-name: 'SinglePost'
+name: 'SinglePost',
+methods:{
+    getPost () {
+        const slug = this.$route.params.slug;
+        console.log(slug)
+    }
+},
+mounted () {
+    this.getPost()
+}
 }
 </script>
 

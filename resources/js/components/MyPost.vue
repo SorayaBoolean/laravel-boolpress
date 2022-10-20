@@ -4,7 +4,7 @@
             <h5 class="card-title">{{post.title}}</h5>
             <p class="card-text">{{truncateText(post.content, 10)}}</p>
             <p class="card-text">{{post.category?post.category.name:'-'}}</p>
-            <router-link :to="{name:SinglePost}" class="btn btn-primary">Read post...</router-link>
+            <router-link :to="{name:'single-post', params: {slug: post.slug}}" class="btn btn-primary">Read post...</router-link>
         </div>
   </div>
 </template>
