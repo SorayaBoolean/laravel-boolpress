@@ -31,7 +31,7 @@
                     },
                     {
                         label:'Blog',
-                        routeName:'#'
+                        routeName:'blog'
                     },
                     {
                         label:'About Us',

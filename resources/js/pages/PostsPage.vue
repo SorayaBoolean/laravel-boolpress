@@ -33,7 +33,7 @@
  <script>
  
      export default {
-         name: 'MyMain',
+         name: 'PostsPage',
          data () {
             return {
                 posts: [],
