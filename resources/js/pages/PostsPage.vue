@@ -8,15 +8,8 @@
 
         <div v-else class="row">
             <h2 class="mb-5">Posts List:</h2>
-            <div class="card col-12 mb-5" v-for="(post, index) in posts" :key="index">
-                <div class="card-body">
-                    <h5 class="card-title">{{post.title}}</h5>
-                    <p class="card-text">{{truncateText(post.content, 10)}}</p>
-                    <p class="card-text">{{post.category?post.category.name:'-'}}</p>
-                    <a href="#" class="btn btn-primary">Read post...</a>
-                </div>
-            </div>
-
+            <MyPost v-for="(post, index) in posts" :key="index"/>
+                
         </div>
 
         <nav >
@@ -26,14 +19,25 @@
                 <li class="page-item" :class="(currentPage == lastPage?'disabled':'')"><a class="page-link" href="#" @click="getPosts(currentPage +1)">Next</a></li>
             </ul>
         </nav>
-    </div>
+    
+
+
+            
+        </div>
+
+      
      
  </template>
  
  <script>
+    
+    import MyPost from ('../components/MyPost.vue')
  
      export default {
          name: 'PostsPage',
+         components:{
+            MyPost
+         },
          data () {
             return {
                 posts: [],
