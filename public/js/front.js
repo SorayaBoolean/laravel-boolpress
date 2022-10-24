@@ -2090,15 +2090,19 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'SinglePost',
+  data: function data() {
+    return {
+      post: null
+    };
+  },
   methods: {
     getPost: function getPost() {
+      var _this = this;
+
       var slug = this.$route.params.slug;
       axios.get('/api/posts' + slug).then(function (response) {
-        console.log(response);
-      })["catch"](function (error) {
-        console.log('Si è verificato un errore');
-        console.log(error);
-      });
+        _this.post = response.data.result;
+      })["catch"](function (error) {});
     }
   },
   mounted: function mounted() {
@@ -2490,7 +2494,9 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("h1", [_vm._v("\n  Pagina del single post\n")]);
+  return _vm.post ? _c("div", {
+    staticClass: "article_card"
+  }, [_c("h1", [_vm._v(_vm._s(_vm.post.title))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.post.content))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.post.category ? _vm.post.category.name : "No category"))])]) : _vm._e();
 };
 
 var staticRenderFns = [];

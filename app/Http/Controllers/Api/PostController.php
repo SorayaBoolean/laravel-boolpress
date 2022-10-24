@@ -16,6 +16,8 @@ class PostController extends Controller
     public function index()
     {
         $post=Post::with(['category'])->paginate(3);
+
+
         return response()->json([
             'success'=> true,
             'results'=> $post
@@ -25,22 +27,22 @@ class PostController extends Controller
     public function show ($slug)
     {
        $post = Post::where ('slug', $slug)->with(['category'])->firtsOrFail();
-       
-       if ($post) {
+
+
+            if ($post->cover){
+                $post->cover=asset('./storage' . $post->cover);
+            }else{
+                $post->cover=asset('img/no_cover.jpg');
+            };
+
         return response ()->json ([
             'success' => 'true',
             'result' => $post
         ]);
-       } else {
-        return response () -> json([
-            'success' => false,
-            'message' => 'Il post richiesto non esiste'
-        ])
-        ;
        }
     }
 
-}
+
 
 
     
