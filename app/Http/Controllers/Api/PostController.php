@@ -26,7 +26,7 @@ class PostController extends Controller
 
     public function show ($slug)
     {
-       $post = Post::where ('slug', $slug)->with(['category'])->firtsOrFail();
+       $post = Post::where ('slug', $slug)->with(['category'])->firstOrFail();
 
 
             if ($post->cover){

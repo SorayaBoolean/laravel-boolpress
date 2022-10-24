@@ -2100,7 +2100,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var slug = this.$route.params.slug;
-      axios.get('/api/posts' + slug).then(function (response) {
+      axios.get('/api/posts/' + slug).then(function (response) {
         _this.post = response.data.result;
       })["catch"](function (error) {});
     }

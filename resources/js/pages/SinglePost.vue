@@ -6,6 +6,7 @@
   </div>
 </template>
 
+
 <script>
 export default {
 name: 'SinglePost',
@@ -18,7 +19,7 @@ methods:{
     getPost () {
         const slug = this.$route.params.slug;
         
-        axios.get('/api/posts'+ slug)
+        axios.get('/api/posts/'+ slug)
         .then((response) => {
           
            this.post =response.data.result;
