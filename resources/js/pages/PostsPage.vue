@@ -56,12 +56,12 @@
                 this.posts= response.data.results.data;
                 this.loading= false;
                 this.current_page= response.data.results.current_page;
-                this.last_page= response.data.results.last_page;
+                this.lastPage= response.data.results.last_page;
             });
             },
          },
          mounted(){
-            this.getPosts();
+            this.getPosts(1);
          },
 
         

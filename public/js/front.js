@@ -2068,12 +2068,12 @@ __webpack_require__.r(__webpack_exports__);
         _this.posts = response.data.results.data;
         _this.loading = false;
         _this.current_page = response.data.results.current_page;
-        _this.last_page = response.data.results.last_page;
+        _this.lastPage = response.data.results.last_page;
       });
     }
   },
   mounted: function mounted() {
-    this.getPosts();
+    this.getPosts(1);
   }
 });
 
@@ -2093,7 +2093,12 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     getPost: function getPost() {
       var slug = this.$route.params.slug;
-      console.log(slug);
+      axios.get('/api/posts' + slug).then(function (response) {
+        console.log(response);
+      })["catch"](function (error) {
+        console.log('Si è verificato un errore');
+        console.log(error);
+      });
     }
   },
   mounted: function mounted() {

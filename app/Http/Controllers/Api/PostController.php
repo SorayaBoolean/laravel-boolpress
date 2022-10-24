@@ -15,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $post=Post::with(['category'])->paginate(2);
+        $post=Post::with(['category'])->paginate(3);
         return response()->json([
             'success'=> true,
             'results'=> $post
@@ -24,7 +24,7 @@ class PostController extends Controller
 
     public function show ($slug)
     {
-       $post = Post::where ('slug', $slug)->firts();
+       $post = Post::where ('slug', $slug)->with(['category'])->firtsOrFail();
        
        if ($post) {
         return response ()->json ([
@@ -35,7 +35,8 @@ class PostController extends Controller
         return response () -> json([
             'success' => false,
             'message' => 'Il post richiesto non esiste'
-        ]);
+        ])
+        ;
        }
     }
 

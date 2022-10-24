@@ -14,6 +14,10 @@ methods:{
         axios.get('/api/posts'+ slug)
         .then((response) => {
             console.log(response)
+        })
+        .catch(function(error){
+          console.log('Si è verificato un errore');
+          console.log(error);
         });
     }
 },
